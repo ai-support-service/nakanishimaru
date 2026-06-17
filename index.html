@@ -49,10 +49,11 @@ body{font-family:"Noto Sans JP",sans-serif;color:var(--text);background:var(--cr
 .hero-video{width:100%;height:100%;object-fit:cover;display:block;}
 .hero-content{max-width:600px;margin:0 auto;text-align:center;padding:14px 16px 18px;}
 .hero-banner{background:#fff;border:2px solid var(--navy);border-radius:8px;padding:4px 14px 5px;margin-bottom:8px;display:inline-block;}
-.hero-banner-sub{font-size:9px;font-weight:700;color:var(--navy);letter-spacing:.15em;}
-.hero-name{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp(15px,4.2vw,24px);font-weight:400;color:var(--navy);line-height:1.1;margin:0;}
-.hero-taco{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp(26px,7.5vw,46px);font-weight:400;color:var(--red);line-height:1;text-shadow:2px 2px 0 var(--cream),-1px -1px 0 #ffd6d6;margin-bottom:6px;display:block;}
-.hero-badges{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:10px;}
+.hero-banner-sub{font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.15em;}
+.hero-name{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp(26px,7.5vw,46px);font-weight:400;color:var(--navy);line-height:1.1;margin:0;}
+.hero-tagline{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+.hero-taco{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp(20px,5vw,28px);font-weight:400;color:var(--red);line-height:1;text-shadow:2px 2px 0 var(--cream),-1px -1px 0 #ffd6d6;display:block;}
+.hero-badges{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;}
 .hero-badge{background:var(--navy);color:var(--yellow);font-size:10px;font-weight:900;padding:4px 11px;border-radius:4px;letter-spacing:.05em;}
 .hero-badge.red{background:var(--red);color:#fff;}
 .hero-badge.green{background:var(--green);color:#fff;}
@@ -127,10 +128,10 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .sch-item{background:var(--cream);border:1.5px solid var(--border);border-radius:10px;padding:13px;}
 .sch-label{font-size:10px;color:var(--sub);margin-bottom:2px;}
 .sch-val{font-size:14px;font-weight:700;color:var(--navy);}
-.tel-banner{background:var(--red);border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;margin-top:14px;}
+.tel-banner{background:var(--navy);border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;margin-top:14px;}
 .tel-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.9);white-space:nowrap;}
 .tel-number{font-size:clamp(16px,5vw,28px);font-weight:900;color:#fff;letter-spacing:.02em;white-space:nowrap;}
-.tel-link{background:#fff;color:var(--red);font-size:12px;font-weight:900;padding:9px 14px;border-radius:50px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.tel-link{background:#fff;color:var(--navy);font-size:12px;font-weight:900;padding:9px 14px;border-radius:50px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
 .access-sec{background:var(--sky-pale);}
 .map-wrap{border-radius:16px;overflow:hidden;border:2px solid var(--border);height:260px;margin-bottom:12px;}
 .map-link{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--navy);border:2px solid var(--navy);font-size:13px;font-weight:700;padding:10px 18px;border-radius:50px;text-decoration:none;margin-bottom:16px;transition:transform .2s;}
@@ -182,10 +183,12 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
       <div class="hero-banner-sub">明石　江井ヶ島漁港</div>
       <h1 class="hero-name">釣船　なかにし丸</h1>
     </div>
-    <span class="hero-taco">たこ釣り</span>
-    <div class="hero-badges">
-      <span class="hero-badge">6〜8月末 出船中</span>
-      <span class="hero-badge green">✔ 初心者歓迎</span>
+    <div class="hero-tagline">
+      <span class="hero-taco">たこ釣り</span>
+      <div class="hero-badges">
+        <span class="hero-badge">6〜8月末 出船中</span>
+        <span class="hero-badge green">✔ 初心者歓迎</span>
+      </div>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num">24名</div><div class="hero-stat-label">定員</div></div>
