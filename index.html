@@ -140,6 +140,18 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .access-dl dt{font-weight:700;color:var(--navy);white-space:nowrap;}
 .access-dl dd{color:var(--sub);}
 .faq-sec{background:#fff;}
+.guide-sec{background:var(--sky-pale);}
+.guide-list{display:flex;flex-direction:column;gap:12px;}
+.guide-item{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px 18px;box-shadow:0 4px 16px rgba(13,50,96,.05);}
+.guide-q{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:16px;font-weight:400;color:var(--navy);margin:0 0 8px;line-height:1.4;}
+.guide-a{font-size:13px;line-height:1.9;color:var(--text);margin:0;}
+.guide-a b{color:var(--navy);}
+.guide-cta{background:var(--cream);border-color:var(--amber);}
+.guide-btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+.guide-btn-cal{flex:1;min-width:140px;background:#fff;color:var(--navy);border:2px solid var(--navy);font-size:13px;font-weight:900;padding:11px 12px;border-radius:50px;text-decoration:none;text-align:center;transition:transform .2s;}
+.guide-btn-cal:hover{transform:translateY(-2px);}
+.guide-btn-line{flex:1;min-width:140px;background:var(--line-green);color:#fff;font-size:13px;font-weight:900;padding:11px 12px;border-radius:50px;text-decoration:none;text-align:center;transition:transform .2s;}
+.guide-btn-line:hover{transform:translateY(-2px);}
 .notice-sec{background:var(--cream);}
 .notice-list{display:flex;flex-direction:column;gap:12px;}
 .notice-item{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 4px 16px rgba(13,50,96,.05);}
@@ -280,7 +292,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <div class="price-card">
       <div class="price-label">乗船料金（お一人様）</div>
       <div class="price-tag">¥8,000 <span>/ 1名</span></div>
-      <div class="price-highlight">¥8,000＋駐車場無料で、平日もたこ釣り</div>
+      <div class="price-highlight">乗船8,000円＋駐車場無料。追加料金はありません</div>
       <div class="price-tags">
         <span class="ptag">✔ ライフジャケット貸出</span>
         <span class="ptag">✔ ロッドレンタル ¥2,000</span>
@@ -306,7 +318,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <div class="map-wrap">
       <iframe src="https://www.google.com/maps?q=%E9%87%A3%E3%82%8A%E8%88%B9%E3%81%AA%E3%81%8B%E3%81%AB%E3%81%97%E4%B8%B8%20%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%98%8E%E7%9F%B3%E5%B8%82%E5%A4%A7%E4%B9%85%E4%BF%9D%E7%94%BA%E6%B1%9F%E4%BA%95%E5%B3%B6481-1&output=embed" width="100%" height="260" style="border:0;display:block" allowfullscreen loading="lazy" title="なかにし丸 江井ヶ島港"></iframe>
     </div>
-    <a href="https://share.google/8h6RptKEsBxzcw5gh" target="_blank" rel="noopener noreferrer" class="map-link">📍 Googleマップで開く（ナビ）</a>
+    <a href="https://maps.app.goo.gl/W1CC2u3fjLb8BaUj9" target="_blank" rel="noopener noreferrer" class="map-link">📍 Googleマップで開く（ナビ）</a>
     <dl class="access-dl">
       <dt>駐車場住所</dt><dd>兵庫県明石市大久保町江井島 481-1（無料）</dd>
       <dt>電車</dt><dd>山陽電鉄「江井ヶ島駅」より徒歩約10分</dd>
@@ -340,11 +352,50 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
   </div>
 </section>
 
+<section class="guide-sec" id="guide">
+  <div class="sec-inner">
+    <div class="sec-head"><div class="sec-eyebrow">GUIDE</div><h2 class="sec-title">明石・江井ヶ島港 タコ釣りガイド</h2><p class="sec-desc">はじめての方へ。明石のタコ釣りの基礎知識をまとめました。</p></div>
+    <div class="guide-list">
+      <article class="guide-item">
+        <h3 class="guide-q">🐙 明石のタコ（マダコ）とは</h3>
+        <p class="guide-a">明石海峡の速い潮にもまれて育つマダコは、身が締まり、味と歯ごたえが格別。全国にその名が知られるブランドダコです。エサとなる豊富なエビ・カニを食べて育つため、旨みが濃いのが特徴。江井ヶ島沖は、その明石ダコが狙える好漁場のひとつです。</p>
+      </article>
+      <article class="guide-item">
+        <h3 class="guide-q">🗓 タコ釣りのシーズンはいつ？</h3>
+        <p class="guide-a">明石のマダコ釣りは6月〜8月末の夏が最盛期。水温が上がるこの時期は数・サイズともに期待でき、新子（その年生まれの小ダコ）から良型まで楽しめます。なかにし丸もこのシーズンに合わせて毎朝出船しています。平日は比較的空きが多く、ゆったり釣りたい方におすすめです。</p>
+      </article>
+      <article class="guide-item">
+        <h3 class="guide-q">🎒 初心者の持ち物・服装</h3>
+        <p class="guide-a">道具がなくても大丈夫。ロッド・リールはレンタル（2,000円）があり、手ぶらでも参加できます。あると便利なのは、日焼け対策（帽子・日焼け止め）、滑りにくい靴、飲み物、クーラーボックス、釣ったタコを入れる洗濯ネット（チャック付き）。ライフジャケットは無料で貸し出します。</p>
+      </article>
+      <article class="guide-item">
+        <h3 class="guide-q">🎣 タコ釣りの釣り方・仕掛け</h3>
+        <p class="guide-a">明石のタコ釣りは、タコエギ（またはスッテ）を海底まで沈め、底をトントンと叩くように誘って乗せるのが基本です。オモリは50号前後、ラインはPE2〜3号が標準。タコが乗ったら一気に巻き上げます。仕掛けの使い方・底の取り方・合わせのタイミングは、船長が船上で丁寧にお教えしますので、初めての方もご安心ください。</p>
+      </article>
+      <article class="guide-item">
+        <h3 class="guide-q">📋 タコ釣りのレギュレーション（2026年版）</h3>
+        <p class="guide-a">マダコ資源を守るため、明石エリア共通のルールが定められています。<br>
+        <b>①エギ・スッテの数</b>：合計2個まで。3個以上の連結は禁止。竿に付けるアームや集魚アイテムもエギ1本としてカウントします。<br>
+        <b>②針の形状</b>：180度の半傘タイプ・1段針のみ使用可。多段針・多軸フックは禁止（2段・3段針も不可）。針はバーブレス（カエシなし）。2026年は5本針まで使用可ですが、2027年以降は4本針までに変更される可能性があります。<br>
+        <b>③エサ・ワーム</b>：エサ（イワシ・サンマ・貝類・カニエキス・バター等）の使用は禁止。ワームに元から付いている香りはOK。集魚スプレー等は乗船時に船長へご確認ください。</p>
+      </article>
+      <article class="guide-item guide-cta">
+        <h3 class="guide-q">⚓ 江井ヶ島港・なかにし丸で釣るなら</h3>
+        <p class="guide-a">なかにし丸は、江井ヶ島港から出船するタコ釣り専門の遊漁船です。乗船料は8,000円、駐車場は無料で、追加料金はありません。ロッドレンタルもあるので手ぶらでOK。ご予約は公式LINEから24時間受付、このページのカレンダーからも空き状況を確認して予約できます。明石海峡を望む港で、本場のタコ釣りを体験してみませんか。</p>
+        <div class="guide-btns">
+          <a href="#calendar" class="guide-btn-cal">📅 空き日程を見る</a>
+          <a href="https://line.me/R/ti/p/@914fpqgy" target="_blank" rel="noopener noreferrer" class="guide-btn-line">💬 LINEで予約</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="foot-logo">🐙 なかにし丸</div>
   <div class="foot-sub">遊漁船 タコ釣り専門 ／ 江井ヶ島港（兵庫県明石市）<br>明石海峡大橋のそばで、毎朝タコを釣っています。</div>
   <nav class="foot-links">
-    <a href="#catch">釣果情報</a><a href="#captain">船長紹介</a><a href="#calendar">予約カレンダー</a><a href="#price">料金</a><a href="#access">アクセス</a><a href="#notice">注意事項</a><a href="#faq">FAQ</a>
+    <a href="#catch">釣果情報</a><a href="#captain">船長紹介</a><a href="#calendar">予約カレンダー</a><a href="#price">料金</a><a href="#access">アクセス</a><a href="#notice">注意事項</a><a href="#guide">タコ釣りガイド</a><a href="#faq">FAQ</a>
     <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener">Instagram</a>
     <a href="https://line.me/R/ti/p/@914fpqgy">LINE予約</a>
   </nav>
