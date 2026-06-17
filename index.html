@@ -90,8 +90,7 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .weekday-tip-strong{display:inline-block;margin-top:4px;font-size:13px;}
 .booking-embed{position:relative;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);min-height:600px;}
 .booking-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px;background:#fff;z-index:1;}
-.booking-frame{width:100%;height:2450px;border:0;display:block;}
-@media(max-width:768px){.booking-frame{height:2650px;}}
+.booking-frame{width:100%;height:900px;border:0;display:block;transition:height .3s ease;}
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .feat-sec{background:#fff;}
 .boat-photo{margin-bottom:24px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);}
@@ -366,6 +365,14 @@ var faqs=[
 ];
 (function(){var list=document.getElementById('faq-list');faqs.forEach(function(item,i){var div=document.createElement('div');div.className='faq-item';div.innerHTML='<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="fa'+i+'"><span class="faq-badge">Q</span><span class="faq-qtext">'+item.q+'</span><span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa'+i+'">'+item.a+'</div>';list.appendChild(div);});})();
 function toggleFaq(btn){var a=btn.nextElementSibling;var open=a.classList.contains('open');a.classList.toggle('open');btn.classList.toggle('open');btn.setAttribute('aria-expanded',!open);}
+window.addEventListener('message',function(e){
+  if(e.origin.indexOf('google.com')===-1&&e.origin.indexOf('googleusercontent.com')===-1)return;
+  var d=e.data;
+  if(d&&d.type==='booking-height'&&d.height){
+    var f=document.getElementById('booking-frame');
+    if(f)f.style.height=(d.height+20)+'px';
+  }
+});
 </script>
 </body>
 </html>
