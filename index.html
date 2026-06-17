@@ -365,12 +365,17 @@ var faqs=[
 ];
 (function(){var list=document.getElementById('faq-list');faqs.forEach(function(item,i){var div=document.createElement('div');div.className='faq-item';div.innerHTML='<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="fa'+i+'"><span class="faq-badge">Q</span><span class="faq-qtext">'+item.q+'</span><span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa'+i+'">'+item.a+'</div>';list.appendChild(div);});})();
 function toggleFaq(btn){var a=btn.nextElementSibling;var open=a.classList.contains('open');a.classList.toggle('open');btn.classList.toggle('open');btn.setAttribute('aria-expanded',!open);}
+var lastBookingH=0;
 window.addEventListener('message',function(e){
   if(e.origin.indexOf('google.com')===-1&&e.origin.indexOf('googleusercontent.com')===-1)return;
   var d=e.data;
   if(d&&d.type==='booking-height'&&d.height){
+    var h=Math.round(d.height);
+    if(h<300||h>4000)return;
+    if(Math.abs(h-lastBookingH)<8)return;
+    lastBookingH=h;
     var f=document.getElementById('booking-frame');
-    if(f)f.style.height=(d.height+20)+'px';
+    if(f)f.style.height=h+'px';
   }
 });
 </script>
