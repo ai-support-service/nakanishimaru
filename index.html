@@ -69,49 +69,30 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .sec-desc{font-size:13px;color:var(--sub);line-height:1.9;}
 .catch-sec{background:var(--cream);position:relative;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .catch-sec::before{content:"🐙";position:absolute;right:-10px;top:10px;font-size:160px;opacity:.05;transform:rotate(-10deg);pointer-events:none;}
-.insta-box{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 24px rgba(13,50,96,.06);}
-.insta-ph{color:var(--sub);font-size:13px;line-height:1.9;}
-.insta-link{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;font-size:13px;font-weight:700;padding:11px 22px;border-radius:50px;text-decoration:none;transition:transform .2s;}
+.insta-box{background:#fff;border:1.5px solid var(--border);border-radius:18px;padding:24px 20px;box-shadow:0 4px 24px rgba(13,50,96,.06);}
+.insta-lead{text-align:center;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.insta-lead b{color:var(--red);}
+.insta-sub{text-align:center;font-size:12px;color:var(--sub);margin-bottom:18px;line-height:1.8;}
+.insta-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px;}
+.insta-tile{aspect-ratio:1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:30px;position:relative;overflow:hidden;}
+.insta-tile::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.12);}
+.insta-tile:nth-child(1){background:linear-gradient(135deg,#1a9ae0,#0d3260);}
+.insta-tile:nth-child(2){background:linear-gradient(135deg,#f5a623,#d92b2b);}
+.insta-tile:nth-child(3){background:linear-gradient(135deg,#0e7abf,#16a34a);}
+.insta-tile:nth-child(4){background:linear-gradient(135deg,#8134af,#dd2a7b);}
+.insta-handle{display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:700;color:var(--navy);margin:16px 0 14px;}
+.insta-link{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(95deg,#f58529,#dd2a7b,#8134af);color:#fff;font-size:14px;font-weight:900;padding:14px;border-radius:50px;text-decoration:none;box-shadow:0 4px 16px rgba(221,42,123,.3);transition:transform .2s;}
 .insta-link:hover{transform:translateY(-2px);}
-.cal-sec{background:var(--sky-pale);}
+@media(max-width:480px){.insta-tiles{grid-template-columns:repeat(2,1fr);}}
+.insta-link:hover{transform:translateY(-2px);}
 .weekday-tip{background:#fff;border:1.5px solid var(--green);border-radius:12px;padding:10px 14px;font-size:12px;line-height:1.7;color:var(--text);margin-bottom:12px;}
 .weekday-tip b{color:#166534;}
 .weekday-tip-strong{display:inline-block;margin-top:4px;font-size:13px;}
-.cal-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);margin-bottom:14px;}
-.cal-hd{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
-.cal-hd-title{color:#fff;font-size:15px;font-weight:700;}
-.cal-nav{width:34px;height:34px;border-radius:8px;border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:14px;cursor:pointer;transition:background .2s;}
-.cal-nav:hover{background:rgba(255,255,255,.15);}
-.cal-legend{display:flex;gap:12px;padding:10px 18px;flex-wrap:wrap;background:#f4faff;border-bottom:1px solid var(--border);}
-.cal-legend span{font-size:10px;display:flex;align-items:center;gap:5px;color:var(--sub);}
-.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);padding:8px 12px 4px;background:#fff;}
-.cal-dow span{text-align:center;font-size:10px;font-weight:700;color:var(--sub);}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:4px 12px 14px;background:#fff;}
-.cal-day{aspect-ratio:1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:700;gap:1px;border:1.5px solid transparent;transition:transform .15s,box-shadow .15s;cursor:default;}
-.cal-day .sub{font-size:7px;opacity:.8;}
-.cal-day.open{background:#dcfce7;border-color:#86efac;color:#166534;cursor:pointer;}
-.cal-day.half{background:#fff8e1;border-color:#fcd34d;color:#92400e;cursor:pointer;}
-.cal-day.full{background:#fee2e2;border-color:#fca5a5;color:#991b1b;}
-.cal-day.none{background:#f1f5f9;color:#94a3b8;}
-.cal-day.empty{background:transparent;border-color:transparent;}
-.cal-day.open:hover,.cal-day.half:hover{transform:scale(1.1);box-shadow:0 4px 12px rgba(0,0,0,.15);}
-.book-panel{background:#fff;border:2px solid var(--sky);border-radius:16px;padding:20px;display:none;box-shadow:0 6px 28px rgba(26,154,224,.15);}
-.book-panel.open{display:block;animation:slideIn .25s ease;}
+.booking-embed{position:relative;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);min-height:600px;}
+.booking-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px;background:#fff;z-index:1;}
+.booking-frame{width:100%;height:2450px;border:0;display:block;}
+@media(max-width:768px){.booking-frame{height:2650px;}}
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.book-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-.book-icon{width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.book-title{font-size:15px;font-weight:900;color:var(--navy);}
-.book-sub{font-size:11px;color:var(--sub);margin-top:1px;}
-.book-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;}
-.chip{background:var(--sky-pale);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;color:var(--sub);}
-.chip strong{color:var(--text);}
-.f-row{margin-bottom:12px;}
-.f-label{font-size:11px;font-weight:700;color:var(--sub);margin-bottom:4px;display:block;}
-.f-input{width:100%;padding:11px 13px;border-radius:8px;border:1.5px solid var(--border);font-size:14px;font-family:inherit;color:var(--text);transition:border-color .2s,box-shadow .2s;}
-.f-input:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(26,154,224,.1);}
-.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.f-submit{width:100%;padding:14px;border-radius:50px;background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;font-size:15px;font-weight:900;border:none;cursor:pointer;font-family:inherit;margin-top:4px;box-shadow:0 4px 16px rgba(13,50,96,.3);transition:transform .2s,box-shadow .2s;}
-.f-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,50,96,.4);}
 .feat-sec{background:#fff;}
 .boat-photo{margin-bottom:24px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);}
 .boat-photo img{width:100%;display:block;}
@@ -220,15 +201,19 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <div class="sec-head">
       <div class="sec-eyebrow">CATCH REPORT</div>
       <h2 class="sec-title">釣果情報</h2>
-      <p class="sec-desc">インスタグラム @nakanishi_maru で毎日更新中。出航のたびに釣果を投稿しています。</p>
+      <p class="sec-desc">最新の釣果は Instagram で毎日更新中。</p>
     </div>
     <article class="insta-box">
-      <!-- 本番：以下2行を有効化
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/nakanishi_maru/" data-instgrm-version="14" style="width:100%;max-width:540px"></blockquote>
-      <script async src="//www.instagram.com/embed.js"><\/script>
-      -->
-      <div class="insta-ph"><div style="font-size:48px;margin-bottom:8px">📸</div><div>インスタグラムの最新投稿がここに自動表示されます</div><div style="font-size:11px;margin-top:4px;opacity:.7">@nakanishi_maru に投稿するだけで釣果情報が更新</div></div>
-      <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-link">📷 インスタで釣果をもっと見る</a>
+      <div class="insta-lead">🐙 <b>毎日更新中</b>｜出航のたびに釣果を投稿</div>
+      <div class="insta-sub">「マダコ◯杯！」「本日も好調！」など、リアルタイムでお届けしています。</div>
+      <div class="insta-tiles">
+        <div class="insta-tile">🐙</div>
+        <div class="insta-tile">🎣</div>
+        <div class="insta-tile">🌊</div>
+        <div class="insta-tile">📸</div>
+      </div>
+      <div class="insta-handle">▶ @nakanishi_maru</div>
+      <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-link">📷 Instagramで釣果を見る</a>
     </article>
   </div>
 </section>
@@ -241,41 +226,9 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
       <p class="sec-desc"><span style="color:#166534;font-weight:700">●緑</span>の日をタップすると予約フォームが開きます。</p>
     </div>
     <div class="weekday-tip">📅 <b>平日は空きが多い傾向</b>です。土日祝より予約が取りやすく、貸切に近い状態でゆったり楽しめます。<br><b class="weekday-tip-strong">平日のご予約、お待ちしております！</b></div>
-    <div class="cal-card">
-      <div class="cal-hd">
-        <button class="cal-nav" onclick="changeMonth(-1)">◀</button>
-        <div class="cal-hd-title" id="cal-title">2026年6月</div>
-        <button class="cal-nav" onclick="changeMonth(1)">▶</button>
-      </div>
-      <div class="cal-legend">
-        <span><i style="background:#86efac;border-radius:3px;display:inline-block;width:10px;height:10px"></i>空きあり</span>
-        <span><i style="background:#fcd34d;border-radius:3px;display:inline-block;width:10px;height:10px"></i>残りわずか</span>
-        <span><i style="background:#fca5a5;border-radius:3px;display:inline-block;width:10px;height:10px"></i>満席</span>
-        <span><i style="background:#e2e8f0;border-radius:3px;display:inline-block;width:10px;height:10px"></i>出航なし</span>
-      </div>
-      <div class="cal-dow">
-        <span style="color:#e57373">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span style="color:#3b82f6">土</span>
-      </div>
-      <div class="cal-grid" id="cal-grid"></div>
-    </div>
-    <div class="book-panel" id="book-panel">
-      <div class="book-head">
-        <div class="book-icon">🐙</div>
-        <div><div class="book-title" id="book-date-label">予約日</div><div class="book-sub">なかにし丸 — 江井ヶ島港 タコ釣り</div></div>
-      </div>
-      <div class="book-chips">
-        <div class="chip">📍 <strong>江井ヶ島港</strong></div>
-        <div class="chip">⏰ <strong>AM4:30集合</strong></div>
-        <div class="chip">💰 <strong>¥8,000 / 名</strong></div>
-        <div class="chip">残り <strong id="book-remain">—</strong>名</div>
-      </div>
-      <div class="f-row"><label class="f-label" for="f-name">お名前 *</label><input type="text" id="f-name" class="f-input" placeholder="例：田中 太郎" autocomplete="name"></div>
-      <div class="f-grid">
-        <div class="f-row"><label class="f-label" for="f-count">人数 *</label><input type="number" id="f-count" class="f-input" placeholder="1" min="1" max="10"></div>
-        <div class="f-row"><label class="f-label" for="f-tel">電話番号 *</label><input type="tel" id="f-tel" class="f-input" placeholder="090-0000-0000" autocomplete="tel"></div>
-      </div>
-      <div class="f-row"><label class="f-label" for="f-note">備考（任意）</label><input type="text" id="f-note" class="f-input" placeholder="初参加・ロッドレンタル希望など"></div>
-      <button class="f-submit">🐙 この日に予約する</button>
+    <div class="booking-embed">
+      <div class="booking-loading" id="booking-loading">予約カレンダーを読み込んでいます…</div>
+      <iframe class="booking-frame" id="booking-frame" src="https://script.google.com/macros/s/AKfycbxuqYOhGcaHDHog7Rk7bF25ao65al7bP1jUd2OOooM/exec?page=booking&embed=1" title="なかにし丸 予約カレンダー" loading="lazy" onload="document.getElementById('booking-loading').style.display='none'"></iframe>
     </div>
   </div>
 </section>
@@ -396,36 +349,6 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
 </footer>
 
 <script>
-var sched={'2026-06-01':{r:6,c:24},'2026-06-02':{r:3,c:24},'2026-06-03':{r:24,c:24},'2026-06-05':{r:8,c:24},'2026-06-06':{r:24,c:24},'2026-06-07':{r:24,c:24},'2026-06-08':{r:0,c:24},'2026-06-09':{r:20,c:24},'2026-06-10':{r:12,c:24},'2026-06-12':{r:5,c:24},'2026-06-13':{r:24,c:24},'2026-06-14':{r:18,c:24},'2026-06-15':{r:0,c:24},'2026-06-16':{r:7,c:24},'2026-06-19':{r:24,c:24},'2026-06-20':{r:3,c:24},'2026-06-21':{r:24,c:24},'2026-06-22':{r:16,c:24},'2026-06-26':{r:0,c:24},'2026-06-27':{r:11,c:24},'2026-06-28':{r:24,c:24},'2026-06-29':{r:4,c:24}};
-var cY=2026,cM=5;
-function pad(n){return String(n).padStart(2,'0');}
-function changeMonth(d){cM+=d;if(cM>11){cM=0;cY++;}if(cM<0){cM=11;cY--;}render();}
-function render(){
-  var mn=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-  document.getElementById('cal-title').textContent=cY+'年'+mn[cM];
-  var g=document.getElementById('cal-grid');g.innerHTML='';
-  var fd=new Date(cY,cM,1).getDay();var dm=new Date(cY,cM+1,0).getDate();
-  var dow=['日','月','火','水','木','金','土'];
-  for(var i=0;i<fd;i++){var e=document.createElement('div');e.className='cal-day empty';g.appendChild(e);}
-  for(var d=1;d<=dm;d++){
-    var e=document.createElement('div');
-    var k=cY+'-'+pad(cM+1)+'-'+pad(d);var s=sched[k];var lbl='';
-    if(s){var rem=s.c-s.r;var rat=s.r/s.c;
-      if(rat>=1){e.className='cal-day full';lbl='満席';}
-      else if(rat>=0.5){e.className='cal-day half';lbl=rem+'名';}
-      else{e.className='cal-day open';lbl=rem+'名';}
-      if(s.r<s.c){(function(key,remain){e.addEventListener('click',function(){openBook(key,remain);});e.tabIndex=0;e.addEventListener('keypress',function(ev){if(ev.key==='Enter')openBook(key,remain);});})(k,rem);}
-    }else{e.className='cal-day none';}
-    e.innerHTML='<span>'+d+'</span>'+(lbl?'<span class="sub">'+lbl+'</span>':'');g.appendChild(e);
-  }
-}
-function openBook(dateStr,remain){
-  var p=dateStr.split('-');var dow=['日','月','火','水','木','金','土'];var d=new Date(dateStr).getDay();
-  document.getElementById('book-date-label').textContent=p[0]+'年'+parseInt(p[1])+'月'+parseInt(p[2])+'日（'+dow[d]+'）の予約';
-  document.getElementById('book-remain').textContent=remain;
-  var panel=document.getElementById('book-panel');panel.classList.add('open');
-  setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
-}
 var faqs=[
   {q:'明石でタコ釣りはどこで乗れますか？',a:'明石市江井ヶ島港から「なかにし丸」が出航しています。山陽電鉄「江井ヶ島駅」徒歩約10分、無料駐車場から乗り場まで約100mです。'},
   {q:'タコ釣りの料金はいくらですか？',a:'1名8,000円です。ロッドレンタルあり・無料駐車場あり。'},
@@ -443,7 +366,6 @@ var faqs=[
 ];
 (function(){var list=document.getElementById('faq-list');faqs.forEach(function(item,i){var div=document.createElement('div');div.className='faq-item';div.innerHTML='<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="fa'+i+'"><span class="faq-badge">Q</span><span class="faq-qtext">'+item.q+'</span><span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa'+i+'">'+item.a+'</div>';list.appendChild(div);});})();
 function toggleFaq(btn){var a=btn.nextElementSibling;var open=a.classList.contains('open');a.classList.toggle('open');btn.classList.toggle('open');btn.setAttribute('aria-expanded',!open);}
-render();
 </script>
 </body>
 </html>
