@@ -239,7 +239,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <div class="weekday-tip">📅 <b>平日は空きが多い傾向</b>です。土日祝より予約が取りやすく、貸切に近い状態でゆったり楽しめます。<br><b class="weekday-tip-strong">平日のご予約、お待ちしております！</b></div>
     <div class="booking-embed">
       <div class="booking-loading" id="booking-loading">予約カレンダーを読み込んでいます…</div>
-      <iframe class="booking-frame" id="booking-frame" src="https://script.google.com/macros/s/AKfycbxuqYOhGcaHDHog7Rk7bF25ao65al7bP1jUd2OOooM/exec?page=booking&embed=1" title="なかにし丸 予約カレンダー" loading="lazy" onload="document.getElementById('booking-loading').style.display='none'"></iframe>
+      <iframe class="booking-frame" id="booking-frame" data-src="https://script.google.com/macros/s/AKfycbxuqYOhGcaHDHog7Rk7bF25ao65al7bP1jUd2OOooM/exec?page=booking&embed=1" title="なかにし丸 予約カレンダー" loading="lazy" onload="if(this.src)document.getElementById('booking-loading').style.display='none'"></iframe>
     </div>
   </div>
 </section>
@@ -409,6 +409,17 @@ var faqs=[
 ];
 (function(){var list=document.getElementById('faq-list');faqs.forEach(function(item,i){var div=document.createElement('div');div.className='faq-item';div.innerHTML='<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="fa'+i+'"><span class="faq-badge">Q</span><span class="faq-qtext">'+item.q+'</span><span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa'+i+'">'+item.a+'</div>';list.appendChild(div);});})();
 function toggleFaq(btn){var a=btn.nextElementSibling;var open=a.classList.contains('open');a.classList.toggle('open');btn.classList.toggle('open');btn.setAttribute('aria-expanded',!open);}
+(function(){
+  var f=document.getElementById('booking-frame');
+  if(!f)return;
+  function load(){if(!f.src&&f.dataset.src){f.src=f.dataset.src;}}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){load();io.disconnect();}});
+    },{rootMargin:'400px'});
+    io.observe(f);
+  }else{load();}
+})();
 var lastBookingH=0;
 window.addEventListener('message',function(e){
   if(e.origin.indexOf('google.com')===-1&&e.origin.indexOf('googleusercontent.com')===-1)return;
