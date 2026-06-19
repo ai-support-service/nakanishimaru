@@ -77,12 +77,9 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .insta-lead b{color:var(--red);}
 .insta-sub{text-align:center;font-size:12px;color:var(--sub);margin-bottom:18px;line-height:1.8;}
 .insta-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px;}
-.insta-tile{aspect-ratio:1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:30px;position:relative;overflow:hidden;}
-.insta-tile::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.12);}
-.insta-tile:nth-child(1){background:linear-gradient(135deg,#1a9ae0,#0d3260);}
-.insta-tile:nth-child(2){background:linear-gradient(135deg,#f5a623,#d92b2b);}
-.insta-tile:nth-child(3){background:linear-gradient(135deg,#0e7abf,#16a34a);}
-.insta-tile:nth-child(4){background:linear-gradient(135deg,#8134af,#dd2a7b);}
+.insta-tile{aspect-ratio:1;border-radius:12px;overflow:hidden;display:block;position:relative;}
+.insta-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.insta-tile:hover img{transform:scale(1.06);}
 .insta-handle{display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:700;color:var(--navy);margin:16px 0 14px;}
 .insta-link{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(95deg,#f58529,#dd2a7b,#8134af);color:#fff;font-size:14px;font-weight:900;padding:14px;border-radius:50px;text-decoration:none;box-shadow:0 4px 16px rgba(221,42,123,.3);transition:transform .2s;}
 .insta-link:hover{transform:translateY(-2px);}
@@ -109,7 +106,7 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .captain-sec{background:var(--sky-pale);}
 .captain-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.08);}
 .captain-photo{width:100%;background:#e2eef7;}
-.captain-photo img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;}
+.captain-photo img{width:100%;height:auto;display:block;}
 .captain-photo-ph{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--sub);font-size:32px;gap:6px;}
 .captain-photo-ph span{font-size:12px;}
 .captain-body{padding:20px 18px;}
@@ -218,10 +215,10 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
       <div class="insta-lead">🐙 <b>毎日更新中</b>｜出航のたびに釣果を投稿</div>
       <div class="insta-sub">「マダコ◯杯！」「本日も好調！」など、リアルタイムでお届けしています。</div>
       <div class="insta-tiles">
-        <div class="insta-tile">🐙</div>
-        <div class="insta-tile">🎣</div>
-        <div class="insta-tile">🌊</div>
-        <div class="insta-tile">📸</div>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch1.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石タコ釣果 大ダコ"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch2.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石タコ釣り 女性初心者の釣果"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch3.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 江井ヶ島 マダコ釣果"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch4.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石海峡 タコ釣り体験"></a>
       </div>
       <div class="insta-handle">▶ @nakanishi_maru</div>
       <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-link">📷 Instagramで釣果を見る</a>
@@ -267,10 +264,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <div class="sec-head"><div class="sec-eyebrow">CAPTAIN</div><h2 class="sec-title">船長紹介</h2><p class="sec-desc">明石・江井ヶ島の海を知り尽くした船長がご案内します。</p></div>
     <div class="captain-card">
       <div class="captain-photo">
-        <!-- 写真が届いたら下のコメントを画像に差し替え：
-        <img src="nakanishimaru-captain.jpg" alt="釣船なかにし丸 船長 中西">
-        -->
-        <div class="captain-photo-ph">📷<br><span>船長の写真</span></div>
+        <img src="nakanishimaru-captain.jpg" width="900" height="603" loading="lazy" decoding="async" alt="釣船なかにし丸 船長 中西">
       </div>
       <div class="captain-body">
         <div class="captain-name">船長　中西</div>
