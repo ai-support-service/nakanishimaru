@@ -93,6 +93,15 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .booking-frame{width:100%;height:900px;border:0;display:block;transition:height .3s ease;}
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .feat-sec{background:#fff;}
+.facility-sec{background:var(--sky-pale);}
+.fac-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.fac-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(13,50,96,.05);}
+.fac-img{width:100%;aspect-ratio:1;overflow:hidden;}
+.fac-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.fac-info{padding:12px 13px 14px;}
+.fac-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:15px;font-weight:400;color:var(--navy);margin:0 0 5px;line-height:1.4;}
+.fac-text{font-size:12px;line-height:1.75;color:var(--text);margin:0;}
+@media(min-width:769px){.fac-grid{grid-template-columns:repeat(3,1fr);gap:16px;}}
 .boat-photo{margin-bottom:24px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);}
 .boat-photo img{width:100%;height:auto;aspect-ratio:1400/1049;object-fit:cover;display:block;}
 .boat-photo figcaption{background:var(--navy);color:#fff;font-size:11px;padding:8px 14px;text-align:center;}
@@ -118,7 +127,7 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .price-tag{font-size:52px;font-weight:900;color:var(--yellow);line-height:1;}
 .price-tag span{font-size:16px;color:rgba(255,255,255,.6);}
 .price-label{font-size:13px;color:rgba(255,255,255,.85);margin-bottom:6px;}
-.price-highlight{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 14px;font-size:13px;color:#fff;margin-top:10px;display:inline-block;}
+.price-highlight{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 14px;font-size:clamp(11px,3.3vw,13px);color:#fff;margin-top:10px;display:inline-block;white-space:nowrap;}
 .price-highlight b{color:var(--yellow);}
 .price-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
 .ptag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.85);}
@@ -128,7 +137,7 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 .sch-val{font-size:14px;font-weight:700;color:var(--navy);}
 .tel-banner{background:var(--navy);border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;margin-top:14px;}
 .tel-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.9);white-space:nowrap;}
-.tel-number{font-size:clamp(16px,5vw,28px);font-weight:900;color:#fff;letter-spacing:.02em;white-space:nowrap;}
+.tel-number{font-size:clamp(16px,5vw,28px);font-weight:900;color:#fff!important;letter-spacing:.02em;white-space:nowrap;}
 .tel-link{background:#fff;color:var(--navy);font-size:12px;font-weight:900;padding:9px 14px;border-radius:50px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
 .access-sec{background:var(--sky-pale);}
 .map-wrap{border-radius:16px;overflow:hidden;border:2px solid var(--border);height:260px;margin-bottom:12px;}
@@ -236,7 +245,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <div class="weekday-tip">📅 <b>平日は空きが多い傾向</b>です。土日祝より予約が取りやすく、貸切に近い状態でゆったり楽しめます。<br><b class="weekday-tip-strong">平日のご予約、お待ちしております！</b></div>
     <div class="booking-embed">
       <div class="booking-loading" id="booking-loading">予約カレンダーを読み込んでいます…</div>
-      <iframe class="booking-frame" id="booking-frame" data-src="https://script.google.com/macros/s/AKfycbxuqYOhGcaHDHog7Rk7bF25ao65al7bP1jUd2OOooM/exec?page=booking&embed=1" title="なかにし丸 予約カレンダー" loading="lazy" onload="if(this.src)document.getElementById('booking-loading').style.display='none'"></iframe>
+      <iframe class="booking-frame" id="booking-frame" data-src="https://script.google.com/macros/s/AKfycbwWsf5etsKG5YnL6v5Fbk-Qb9mRhD4o68_wJw4S9jZvk8aIqEbQYibH8IHouyK92j-m/exec?page=booking&embed=1" title="なかにし丸 予約カレンダー" loading="lazy" onload="if(this.src)document.getElementById('booking-loading').style.display='none'"></iframe>
     </div>
   </div>
 </section>
@@ -255,6 +264,38 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
       <div class="feat-card"><div class="feat-icon">📱</div><div class="feat-name">LINE予約で完結</div><div class="feat-desc">予約・変更・キャンセルすべてLINEで。24時間受付。電話予約も可。</div></div>
       <div class="feat-card"><div class="feat-icon">🌉</div><div class="feat-name">明石海峡大橋のそば</div><div class="feat-desc">江井ヶ島港から出航。明石海峡大橋を眺めながら釣りを楽しめる最高のロケーション。</div></div>
       <div class="feat-card"><div class="feat-icon">📸</div><div class="feat-name">釣果毎日更新</div><div class="feat-desc">インスタグラムで毎日の釣果を公開中。予約前に最新状況を確認できます。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="facility-sec" id="facility">
+  <div class="sec-inner">
+    <div class="sec-head"><div class="sec-eyebrow">FACILITY</div><h2 class="sec-title">船の設備・サービス</h2><p class="sec-desc">初めての方も快適に過ごせる設備が揃っています。</p></div>
+    <div class="fac-grid">
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-toilet.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 船内トイレ完備"></div>
+        <div class="fac-info"><h3 class="fac-title">🚻 トイレ完備</h3><p class="fac-text">船内にトイレあり。長時間でも安心。女性のお客様にも好評です。</p></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-inside.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 各個人イケス 広い船内"></div>
+        <div class="fac-info"><h3 class="fac-title">🪣 各個人イケス・広い船内</h3><p class="fac-text">釣ったタコを活かす個別イケス付き。ゆったりした船内で快適に釣りができます。</p></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-roof.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 屋根付き 遊漁船"></div>
+        <div class="fac-info"><h3 class="fac-title">☂️ 屋根付き</h3><p class="fac-text">日差しや小雨を防ぐ屋根付き。夏でも快適に釣りを楽しめます。</p></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-rental.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 レンタルタックル ロッドレンタル"></div>
+        <div class="fac-info"><h3 class="fac-title">🎣 レンタルタックル充実</h3><p class="fac-text">ロッド・リールのレンタルが充実。手ぶらでも参加OKです。</p></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-shikake.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 仕掛け販売 タコエギ"></div>
+        <div class="fac-info"><h3 class="fac-title">🛒 仕掛け販売あり</h3><p class="fac-text">タコエギや仕掛けを船で購入できます。忘れてしまっても安心です。</p></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-ice.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 氷あり 釣果保冷"></div>
+        <div class="fac-info"><h3 class="fac-title">🧊 氷あり</h3><p class="fac-text">凍ったペットボトルをご用意。釣ったタコも飲み物も冷たいまま持ち帰れます。</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -325,7 +366,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     <ul class="notice-list">
       <li class="notice-item"><div class="notice-icon">🤫</div><div class="notice-text"><strong>駐車場〜乗り場間は静かにお願いします</strong>近隣に住宅があるため、駐車場から船までの移動はお静かにお願いします。</div></li>
       <li class="notice-item"><div class="notice-icon">🧊</div><div class="notice-text"><strong>凍ったペットボトルと交換します</strong>飲料水を入れたペットボトルをご持参いただくと、出船時に凍ったペットボトルと交換いたします。保冷剤代わりにお使いください。</div></li>
-      <li class="notice-item"><div class="notice-icon">🐙</div><div class="notice-text"><strong>明石エリア共通のタコ釣りルール（2026年版）</strong>
+      <li class="notice-item"><div class="notice-icon">🐙</div><div class="notice-text"><strong>明石エリア共通<br>タコ釣りルール（2026年版）</strong>
         <p><b>①エギ・スッテの数</b><br>使用できるのは合計2個まで。3個以上の連結は禁止です。竿に付けるアームや集魚アイテムもエギ1本としてカウントするため、シンプルな仕掛けでお願いします。</p>
         <p><b>②針（フック）の形状</b><br>180度の半傘タイプ・1段針のみ使用可。多段針・多軸フックは禁止（2段・3段針も禁止）。針はバーブレス（カエシなし）をご使用ください。2026年は5本針まで使用可ですが、2027年以降は4本針までに変更される可能性があります。</p>
         <p><b>③エサ・ワームの使用</b><br>エサ（イワシ・サンマ・貝類・カニエキス・バター等）の使用は禁止です。ワームに元から付いている香りはOKです。集魚スプレー・スタンプ等の使用については、乗船時に船長へご確認ください。</p>
@@ -378,7 +419,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
   <div class="foot-logo">🐙 なかにし丸</div>
   <div class="foot-sub">遊漁船 タコ釣り専門 ／ 江井ヶ島港（兵庫県明石市）<br>明石海峡大橋のそばで、毎朝タコを釣っています。</div>
   <nav class="foot-links">
-    <a href="#catch">釣果情報</a><a href="#captain">船長紹介</a><a href="#calendar">予約カレンダー</a><a href="#price">料金</a><a href="#access">アクセス</a><a href="#notice">注意事項</a><a href="#guide">タコ釣りガイド</a><a href="#faq">FAQ</a>
+    <a href="#catch">釣果情報</a><a href="#facility">船の設備</a><a href="#captain">船長紹介</a><a href="#calendar">予約カレンダー</a><a href="#price">料金</a><a href="#access">アクセス</a><a href="#notice">注意事項</a><a href="#guide">タコ釣りガイド</a><a href="#faq">FAQ</a>
     <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener">Instagram</a>
     <a href="https://line.me/R/ti/p/@914fpqgy">LINE予約</a>
   </nav>
