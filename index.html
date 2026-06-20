@@ -94,14 +94,18 @@ h2.sec-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:clamp
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .feat-sec{background:#fff;}
 .facility-sec{background:var(--sky-pale);}
-.fac-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
-.fac-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(13,50,96,.05);}
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.fac-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(13,50,96,.05);}
+.fac-card.span2{grid-column:span 2;}
 .fac-img{width:100%;aspect-ratio:1;overflow:hidden;}
 .fac-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.fac-info{padding:12px 13px 14px;}
-.fac-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:15px;font-weight:400;color:var(--navy);margin:0 0 5px;line-height:1.4;}
-.fac-text{font-size:12px;line-height:1.75;color:var(--text);margin:0;}
-@media(min-width:769px){.fac-grid{grid-template-columns:repeat(3,1fr);gap:16px;}}
+.fac-card.span2 .fac-img{aspect-ratio:2/1;}
+.fac-card.dual-img .fac-img{display:grid;grid-template-columns:1fr 1fr;gap:0;aspect-ratio:2/1;}
+.fac-card.dual-img .fac-img img{aspect-ratio:1;height:100%;}
+.fac-info{padding:8px 10px 10px;}
+.fac-title{font-family:"Yusei Magic","Noto Sans JP",sans-serif;font-size:11px;font-weight:400;color:var(--navy);margin:0 0 3px;line-height:1.3;}
+.fac-text{font-size:10px;line-height:1.6;color:var(--text);margin:0;}
+@media(min-width:769px){.fac-grid{gap:16px;}.fac-info{padding:12px 13px 14px;}.fac-title{font-size:15px;margin:0 0 5px;line-height:1.4;}.fac-text{font-size:12px;line-height:1.75;}}
 .boat-photo{margin-bottom:24px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(13,50,96,.1);}
 .boat-photo img{width:100%;height:auto;aspect-ratio:1400/1049;object-fit:cover;display:block;}
 .boat-photo figcaption{background:var(--navy);color:#fff;font-size:11px;padding:8px 14px;text-align:center;}
@@ -272,26 +276,40 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
   <div class="sec-inner">
     <div class="sec-head"><div class="sec-eyebrow">FACILITY</div><h2 class="sec-title">船の設備・サービス</h2><p class="sec-desc">初めての方も快適に過ごせる設備が揃っています。</p></div>
     <div class="fac-grid">
+      <!-- 1: 大型船（2マス幅） -->
+      <div class="fac-card span2">
+        <div class="fac-img"><img src="fac-ship.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 最大24名の大型遊漁船"></div>
+        <div class="fac-info"><h3 class="fac-title">🚢 最大24名の大型船</h3><p class="fac-text">ゆったりしたスペースで快適に釣りを楽しめます。グループでも安心の大型船です。</p></div>
+      </div>
+      <!-- 4: 個人イケス -->
+      <div class="fac-card">
+        <div class="fac-img"><img src="fac-ikes.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 個人イケス タモ完備"></div>
+        <div class="fac-info"><h3 class="fac-title">🪣 個人イケス・タモ完備</h3><p class="fac-text">釣ったタコを活かす個別イケス付き。タモも完備しているので手ぶらでOK。</p></div>
+      </div>
+      <!-- 2+3: 屋根付き・広い船内（2枚横並び・2マス幅） -->
+      <div class="fac-card span2 dual-img">
+        <div class="fac-img">
+          <img src="fac-roof.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 全席屋根付き">
+          <img src="fac-inside.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 広い船内">
+        </div>
+        <div class="fac-info"><h3 class="fac-title">☂️ 全席屋根付き・広い船内</h3><p class="fac-text">日差しや小雨を防ぐ屋根付き。広々した船内で夏でも快適に釣りを楽しめます。</p></div>
+      </div>
+      <!-- 5: トイレ -->
       <div class="fac-card">
         <div class="fac-img"><img src="fac-toilet.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 船内トイレ完備"></div>
         <div class="fac-info"><h3 class="fac-title">🚻 トイレ完備</h3><p class="fac-text">船内にトイレあり。長時間でも安心。女性のお客様にも好評です。</p></div>
       </div>
-      <div class="fac-card">
-        <div class="fac-img"><img src="fac-inside.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 各個人イケス 広い船内"></div>
-        <div class="fac-info"><h3 class="fac-title">🪣 各個人イケス・広い船内</h3><p class="fac-text">釣ったタコを活かす個別イケス付き。ゆったりした船内で快適に釣りができます。</p></div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-img"><img src="fac-roof.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 屋根付き 遊漁船"></div>
-        <div class="fac-info"><h3 class="fac-title">☂️ 屋根付き</h3><p class="fac-text">日差しや小雨を防ぐ屋根付き。夏でも快適に釣りを楽しめます。</p></div>
-      </div>
+      <!-- 6: レンタルタックル -->
       <div class="fac-card">
         <div class="fac-img"><img src="fac-rental.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 レンタルタックル ロッドレンタル"></div>
         <div class="fac-info"><h3 class="fac-title">🎣 レンタルタックル充実</h3><p class="fac-text">ロッド・リールのレンタルが充実。手ぶらでも参加OKです。</p></div>
       </div>
+      <!-- 7: 仕掛け販売 -->
       <div class="fac-card">
         <div class="fac-img"><img src="fac-shikake.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 仕掛け販売 タコエギ"></div>
         <div class="fac-info"><h3 class="fac-title">🛒 仕掛け販売あり</h3><p class="fac-text">タコエギや仕掛けを船で購入できます。忘れてしまっても安心です。</p></div>
       </div>
+      <!-- 8: 氷あり -->
       <div class="fac-card">
         <div class="fac-img"><img src="fac-ice.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 氷あり 釣果保冷"></div>
         <div class="fac-info"><h3 class="fac-title">🧊 氷あり</h3><p class="fac-text">凍ったペットボトルをご用意。釣ったタコも飲み物も冷たいまま持ち帰れます。</p></div>
