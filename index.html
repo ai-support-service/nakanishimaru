@@ -484,6 +484,22 @@ window.addEventListener('message',function(e){
     var f=document.getElementById('booking-frame');
     if(f)f.style.height=h+'px';
   }
+  // 予約完了時：iframe(予約カレンダー)の上端までHP自体をスクロール
+  if(d&&d.type==='booking-done'){
+    var bf=document.getElementById('booking-frame');
+    if(bf){
+      // 高さ調整とスクロールが競合しないよう、確実に上端へ寄せる
+      var doScroll=function(){
+        var rect=bf.getBoundingClientRect();
+        var top=window.pageYOffset+rect.top-8;
+        window.scrollTo({top:top,behavior:'smooth'});
+      };
+      doScroll();
+      // 完了画面表示で高さが変わった直後にもう一度補正（ズレ防止）
+      setTimeout(doScroll,250);
+      setTimeout(doScroll,600);
+    }
+  }
 });
 </script>
 </body>
