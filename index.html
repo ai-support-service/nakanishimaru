@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K48W4C742K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', "G-K48W4C742K");
+  // 成果イベント送信用ヘルパー
+  function trackEvent(name, params){
+    try{ gtag('event', name, params || {}); }catch(e){}
+  }
+</script>
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="XTeimjyaNVRJjcSQSrsXGo2k9NY-DLx_4gNnUEruTBE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -187,8 +199,8 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
 </head>
 <body>
 <div class="sticky">
-  <a href="#calendar" class="sticky-cal">📅 空き日程を見る</a>
-  <a href="https://line.me/R/ti/p/@914fpqgy" class="sticky-btn">LINEで予約</a>
+  <a href="#calendar" class="sticky-cal" onclick="trackEvent('click_view_schedule',{location:'sticky_bar'})">📅 空き日程を見る</a>
+  <a href="https://line.me/R/ti/p/@914fpqgy" class="sticky-btn" onclick="trackEvent('click_line_booking',{location:'sticky_bar'})">LINEで予約</a>
 </div>
 <header class="hero">
   <div class="hero-video-wrap">
@@ -228,13 +240,13 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
       <div class="insta-lead">🐙 <b>毎日更新中</b>｜出航のたびに釣果を投稿</div>
       <div class="insta-sub">「マダコ◯杯！」「本日も好調！」など、リアルタイムでお届けしています。</div>
       <div class="insta-tiles">
-        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch1.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石タコ釣果 大ダコ"></a>
-        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch2.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石タコ釣り 女性初心者の釣果"></a>
-        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch3.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 江井ヶ島 マダコ釣果"></a>
-        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile"><img src="catch4.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石海峡 タコ釣り体験"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile" onclick="trackEvent('click_instagram',{location:'photo1'})"><img src="catch1.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石タコ釣果 大ダコ"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile" onclick="trackEvent('click_instagram',{location:'photo2'})"><img src="catch2.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石タコ釣り 女性初心者の釣果"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile" onclick="trackEvent('click_instagram',{location:'photo3'})"><img src="catch3.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 江井ヶ島 マダコ釣果"></a>
+        <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-tile" onclick="trackEvent('click_instagram',{location:'photo4'})"><img src="catch4.jpg" width="600" height="600" loading="lazy" decoding="async" alt="なかにし丸 明石海峡 タコ釣り体験"></a>
       </div>
       <div class="insta-handle">▶ @nakanishi_maru</div>
-      <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-link">📷 Instagramで釣果を見る</a>
+      <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener noreferrer" class="insta-link" onclick="trackEvent('click_instagram',{location:'catch_section'})">📷 Instagramで釣果を見る</a>
     </article>
   </div>
 </section>
@@ -356,7 +368,7 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
     </div>
     <div class="tel-banner">
       <div><div class="tel-label">📞 ご予約・お問い合わせ</div><div class="tel-number">080-2479-3150</div></div>
-      <a href="tel:080-2479-3150" class="tel-link">今すぐ電話する</a>
+      <a href="tel:080-2479-3150" class="tel-link" onclick="trackEvent('click_phone',{location:'access'})">今すぐ電話する</a>
     </div>
   </div>
 </section>
@@ -437,8 +449,8 @@ footer{background:var(--navy);padding:36px 20px 90px;text-align:center;}
   <div class="foot-sub">遊漁船 タコ釣り専門 ／ 江井ヶ島港（兵庫県明石市）<br>明石海峡大橋のそばで、毎朝タコを釣っています。</div>
   <nav class="foot-links">
     <a href="#catch">釣果情報</a><a href="#facility">船の設備</a><a href="#captain">船長紹介</a><a href="#calendar">予約カレンダー</a><a href="#price">料金</a><a href="#access">アクセス</a><a href="#notice">注意事項</a><a href="#guide">タコ釣りガイド</a><a href="#faq">FAQ</a>
-    <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://line.me/R/ti/p/@914fpqgy">LINE予約</a>
+    <a href="https://www.instagram.com/nakanishi_maru" target="_blank" rel="noopener" onclick="trackEvent('click_instagram',{location:'footer'})">Instagram</a>
+    <a href="https://line.me/R/ti/p/@914fpqgy" onclick="trackEvent('click_line_booking',{location:'footer'})">LINE予約</a>
   </nav>
   <div class="foot-copy">© 2026 なかにし丸. All rights reserved.</div>
 </footer>
@@ -470,6 +482,18 @@ function toggleFaq(btn){var a=btn.nextElementSibling;var open=a.classList.contai
       es.forEach(function(e){if(e.isIntersecting){load();io.disconnect();}});
     },{rootMargin:'400px'});
     io.observe(f);
+    // カレンダーが実際に画面に入ったら「到達」を1回だけ計測
+    var reached=false;
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting&&!reached){
+          reached=true;
+          trackEvent('reach_calendar',{});
+          io2.disconnect();
+        }
+      });
+    },{threshold:0.3});
+    io2.observe(f);
   }else{load();}
 })();
 var lastBookingH=0;
@@ -484,18 +508,17 @@ window.addEventListener('message',function(e){
     var f=document.getElementById('booking-frame');
     if(f)f.style.height=h+'px';
   }
-  // 予約完了時：iframe(予約カレンダー)の上端までHP自体をスクロール
+  // 予約完了時：GA4イベント発火 ＋ iframe上端へスクロール
   if(d&&d.type==='booking-done'){
+    trackEvent('reserve_complete',{method:'web_form'});
     var bf=document.getElementById('booking-frame');
     if(bf){
-      // 高さ調整とスクロールが競合しないよう、確実に上端へ寄せる
       var doScroll=function(){
         var rect=bf.getBoundingClientRect();
         var top=window.pageYOffset+rect.top-8;
         window.scrollTo({top:top,behavior:'smooth'});
       };
       doScroll();
-      // 完了画面表示で高さが変わった直後にもう一度補正（ズレ防止）
       setTimeout(doScroll,250);
       setTimeout(doScroll,600);
     }
